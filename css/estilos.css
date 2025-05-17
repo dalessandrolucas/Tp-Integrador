@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {       
+    background-color: rgb(0, 0, 0);
+  color: white;
+    background-repeat: no-repeat;
+  background-size: cover;
+  scrollbar-color: #c4c4c4 transparent;
+  
+input, select{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+}
+
+/* INICIO NAV*/
+.logo-nav-container{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+        background-color: black;   
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    padding-top: 10px;  
+}
+
+.menu li{ 
+    padding-right:20px;
+}
+.menu a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+a:hover{
+    color: gray;
+       transition-duration: 0.4s;      
+}
+
+.logo:hover{
+    transform: scale(1.10);
+}
+/* FINAL NAV */
+
+/* IMAGEN HERO*/
+.eventos-top{
+    color: white;
+  background-image: url(/assets/fondo3.jpg);
+  width: 100%;
+  text-align: center;
+  height: 500px;
+   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-body-hero{
+    padding-top: 15px;
+    color: white;
+    font-size:  30px;
+
+}
+
+.card-img-hero:hover{
+     filter: grayscale(50%);
+  transform: scale(1.10);
+}
+.card-img-hero{
+    margin-top: 60px;
+}
+/* IMAGEN HERO*/
+
+
+/* INICIO CATEGORIAS*/
+
+.categorias-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categorias-container p{
+  display: flex;
+  align-items: center; 
+  margin: 30px;
+}
+.search{
+    margin-left: 10%;
+    
+}
+/* FIN CATEGORIAS */
+
+/*INICIO CARTELERA */
+
+.cartelera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cartelera h2{
+    margin-left: 30px;
+}
+ .container-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+   
+ }
+ .card-title{
+     display: flex;
+     font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img:hover{
+     filter: grayscale(50%);
+  transform: scale(1.10);
+}
+
+/*INICIO CARTELERA */
