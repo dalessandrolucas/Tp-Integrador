@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/estilos.css" />
-    <title>Pelix - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Pelix - Ver Pelicula</title>
 </head>
 
-<body class="Home">
-
+<body>
     <header>
         <div class="logo-nav-container">
             <a href="index.html">
@@ -25,37 +24,29 @@
             </nav>
         </div>
     </header>
+    <div class="container-pelicula">
+        <div class="detalle-body">
+            <div class="img-boton">
+                <img src="./assets/img-shrek2.jpg" alt="shrek2" class="img-detallada">
+                <a href="https://youtu.be/oW-vf54cUes?si=0TPqhI-ldBLqBO6y" target="_blank"> <button
+                        class="boton-comenzar">Comenzar</button></a>
 
-    <section class="eventos-top">
-       <div class="img-hero" justify-content-center;>
-                <img src="assets/El-eternauta.webp" alt="Dr.House" class="card-img-hero">
-                <div class="card-body-hero">
-                    <h5 class="card-title">El Eternauta</h5>
-                </div>
             </div>
-        
-    </section>
+            <div class="descripcion">
+                <h1>Shrek 2</h1>
+                <p>Shrek 2 continúa la historia del ogro Shrek y la princesa Fiona después de su boda y luna de miel. La
+                    pareja se encuentra en la ciénaga cuando son invitados por los padres de Fiona a visitar el Reino
+                    Muy
+                    Muy Lejano para celebrar su enlace. Shrek, con su fiel amigo Burro, debe enfrentarse a la renuencia
+                    de
+                    los padres de Fiona, que esperan que su yerno sea un príncipe y no un ogro, y a los planes del Hada
+                    Madrina, que no están de acuerdo con la relación de su hija con Shrek. </p>
+            </div>
+        </div>
 
-    <div class="categorias-container">
-        <p>Categorías</p>
-        <br />
-        <select class="select-categorias">
-            <option value="1">Drama</option>
-            <option value="2">Comedia</option>
-            <option value="3">Ciencia</option>
-            <option value="4">Ficción</option>
-            <option value="5">Terror</option>
-            <option value="6">Fantasía</option>
-            <option value="7">Misterio</option>
-            <option value="8">Románticas</option>
-            <option value="9">Deportivas</option>
-        </select>
-        <input type="search" placeholder="Buscar por nombre" class="search"/>
-        <br />
     </div>
-
-    <main class="Cartelera">
-        <h2>Series más populares</h2>
+    <main class="peliculas-similares">
+        <h2>Peliculas Similares</h2>
         <br>
         <div class="container-cards">
 
@@ -102,14 +93,6 @@
         </div>
 
     </main>
-
-
-<footer>
-    <div>
-
-    </div>
-</footer>
-
 </body>
 
 </html>
