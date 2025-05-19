@@ -2,6 +2,7 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -140,6 +141,70 @@ a:hover {
 
 /*INICIO CARTELERA */
 
+/* INICIO CATEGORIAS*/
+
+.categorias-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categorias-container p {
+    display: flex;
+    align-items: center;
+    margin: 30px;
+}
+
+.search {
+    margin-left: 10%;
+
+}
+
+/* FIN CATEGORIAS */
+
+/*INICIO CARTELERA */
+
+.Cartelera {
+    margin-top: 15px;
+}
+
+.Cartelera h2 {
+    margin-left: 30px;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+
+.card-title {
+    display: flex;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 5px 1px 2px black;
+}
+
+.card-img:hover {
+    filter: grayscale(50%);
+    transform: scale(1.10);
+}
+
+hr {
+    margin-top: 50px;
+    align-content: center;
+    border-color: gray;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/*INICIO CARTELERA */
+
+
 /* INICIO VISTA DETALLADA */
 .container-pelicula {
     margin-top: 50px;
@@ -157,6 +222,7 @@ a:hover {
 
 .img-boton {
     text-align: center;
+    margin-left: 30px;
 
 }
 
@@ -178,6 +244,83 @@ a:hover {
     transform: scale(1.10);
 }
 
-.peliculas-similares{
+.peliculas-similares {
     margin-top: 50px;
 }
+
+.peliculas-similares h2 {
+    margin-left: 30px;
+}
+
+
+/* FIN VISTA DETALLADA */
+
+
+
+/*INICIO FOOTER */
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    text-align: center;
+    align-content: center;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 0;
+
+
+
+}
+
+.Menu a {
+    color: white;
+}
+
+.Menu li {
+    display: flex;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.icons h5 {
+    margin-bottom: 10px;
+}
+
+.icons a {
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+}
+
+.legal-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    flex-direction: column;
+    list-style: none;
+    position: left;
+    padding: 0;
+}
+
+.legal-list a {
+    color: white;
+}
+
+.footer-container a:hover {
+    color: gray;
+    transition-duration: 0.4s;
+}
+
+/*FIN FOOTER */
