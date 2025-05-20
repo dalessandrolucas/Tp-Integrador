@@ -147,12 +147,14 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .categorias-container p {
     display: flex;
     align-items: center;
     margin: 30px;
+    text-shadow: 5px 1px 2px black;
 }
 
 .search {
@@ -187,6 +189,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     text-shadow: 5px 1px 2px black;
+    color: white;
 }
 
 .card-img:hover {
@@ -206,6 +209,13 @@ hr {
 
 
 /* INICIO VISTA DETALLADA */
+
+.body-peliculas{
+    background-image: url(../assets/fondo-rojo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container-pelicula {
     margin-top: 50px;
 }

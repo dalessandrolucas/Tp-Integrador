@@ -1,149 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/estilos.css">
-        <title>Pelix - Ver Pelicula</title>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Pelix - Ver Pelicula</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-    <body>
-        <header>
-            <div class="logo-nav-container">
-                <a href="index.html">
-                    <img src="./assets/logo.png" alt="Logo" class="logo" />
-                </a>
-                <nav class="menu">
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./vista_series.html">Series</a></li>
-                        <li><a href="./vista_peliculas.html">Películas</a></li>
-                        <li><a class="perfil" href="#">Perfil</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <div class="container-pelicula">
-            <div class="detalle-body">
-                <div class="img-boton">
-                    <img src="./assets/img-shrek2.jpg" alt="shrek2"
-                        class="img-detallada">
-                    <a href="https://youtu.be/oW-vf54cUes?si=0TPqhI-ldBLqBO6y"
-                        target="_blank"> <button
-                            class="boton-comenzar">Comenzar</button></a>
-
-                </div>
-                <div class="descripcion">
-                    <h1>Shrek 2</h1>
-                    <p>Shrek 2 continúa la historia del ogro Shrek y la princesa
-                        Fiona después de su boda y luna de miel. La
-                        pareja se encuentra en la ciénaga cuando son invitados
-                        por los padres de Fiona a visitar el Reino
-                        Muy
-                        Muy Lejano para celebrar su enlace. Shrek, con su fiel
-                        amigo Burro, debe enfrentarse a la renuencia
-                        de
-                        los padres de Fiona, que esperan que su yerno sea un
-                        príncipe y no un ogro, y a los planes del Hada
-                        Madrina, que no están de acuerdo con la relación de su
-                        hija con Shrek. </p>
-                </div>
-            </div>
-
+<body class="body-peliculas">
+    <header>
+        <div class="logo-nav-container">
+            <a href="index.html">
+                <img src="./assets/logo.png" alt="Logo" class="logo" />
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./vista_series.html">Series</a></li>
+                    <li><a href="./vista_peliculas.html">Películas</a></li>
+                    <li><a class="perfil" href="#">Perfil</a></li>
+                </ul>
+            </nav>
         </div>
-        <main class="peliculas-similares">
-            <h2>Peliculas Similares</h2>
-            <br>
-            <div class="container-cards">
+    </header>
+    <div class="container-pelicula">
+        <div class="detalle-body">
+            <div class="img-boton">
+                <img src="./assets/img-shrek2.jpg" alt="shrek2" class="img-detallada">
+                <a href="https://youtu.be/oW-vf54cUes?si=0TPqhI-ldBLqBO6y" target="_blank"> <button
+                        class="boton-comenzar">Comenzar</button></a>
 
-                <div class="card">
-                    <img src="./assets/LluviaDeHamburguesas2.webp"
-                        alt="LluviaDeHamburguesas2" class="card-img">
+            </div>
+            <div class="descripcion">
+                <h1>Shrek 2</h1>
+                <p>Shrek 2 continúa la historia del ogro Shrek y la princesa
+                    Fiona después de su boda y luna de miel. La
+                    pareja se encuentra en la ciénaga cuando son invitados
+                    por los padres de Fiona a visitar el Reino
+                    Muy
+                    Muy Lejano para celebrar su enlace. Shrek, con su fiel
+                    amigo Burro, debe enfrentarse a la renuencia
+                    de
+                    los padres de Fiona, que esperan que su yerno sea un
+                    príncipe y no un ogro, y a los planes del Hada
+                    Madrina, que no están de acuerdo con la relación de su
+                    hija con Shrek. </p>
+            </div>
+        </div>
+
+    </div>
+    <main class="peliculas-similares">
+        <h2>Peliculas Similares</h2>
+        <br>
+        <div class="container-cards">
+
+            <div class="card">
+                <a href="./VistasPeliculas/vista_pelicula_LDH.html">
+                    <img src="./assets/LluviaDeHamburguesas2.webp" alt="LluviaDeHamburguesas2" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Lluvia de Hamburguesas 2</h5>
                     </div>
-                </div>
+                </a>
+            </div>
 
-                <div class="card">
-                    <img src="./assets/Hotel Transylvania.webp"
-                        alt="Hotel-Transylvania" class="card-img">
+            <div class="card">
+                <a href="./VistasPeliculas/vista_pelicula_HT.html">
+                    <img src="./assets/Hotel Transylvania.webp" alt="Hotel-Transylvania" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Hotel Transylvania</h5>
                     </div>
-                </div>
+                </a>
+            </div>
 
-                <div class="card">
-                    <img src="./assets/MVF3.webp" alt="MiVillanoFavorito"
-                        class="card-img">
+            <div class="card">
+                <a href="">
+                    <img src="./assets/MVF3.webp" alt="MiVillanoFavorito" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Mi Villano Favorito 3</h5>
                     </div>
-                </div>
+                </a>
+            </div>
 
-                <div class="card">
-                    <img src="./assets/Shrek3.webp" alt="Shrek3"
-                        class="card-img">
+            <div class="card">
+                <a href="">
+                    <img src="./assets/Shrek3.webp" alt="Shrek3" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Shrek Tercero</h5>
                     </div>
-                </div>
+                </a>
+            </div>
 
-                <div class="card">
-                    <img src="./assets/Trolls.webp" alt="Trolls"
-                        class="card-img">
+            <div class="card">
+                <a href="">
+                    <img src="./assets/Trolls.webp" alt="Trolls" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Trolls</h5>
                     </div>
-                </div>
+                </a>
             </div>
+        </div>
 
-        </main>
+    </main>
 
-        <hr>
-        <footer>
-            <div class="footer-container">
 
-                <section class="Menu">
-                    <h5>MENÚ</h3>
+    <footer>
+        <div class="footer-container">
+
+            <section class="Menu">
+                <h5>MENÚ</h3>
                     <ul class="menu-list">
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./vista_series.html">Series</a></li>
                         <li><a href="./vista_peliculas.html">Películas</a></li>
                         <li><a class="perfil" href="#">Perfil</a></li>
                     </ul>
-                </section>
+            </section>
 
-                <section class="Redes-sociales">
-                    <div class="icons">
-                        <h5>¡SÍGUENOS!</h3>
-                        <a href="#"><i
-                                class="fa-brands fa-instagram fa-lg"></i></a>
-                        <a href="#"><i
-                                class="fa-brands fa-youtube fa-lg"></i></a>
-                        <a href="#"><i
-                                class="fa-brands fa-x-twitter fa-lg"></i></a>
-                        <a href="#"><i
-                                class="fa-brands fa-tiktok fa-lg"></i></a>
-                    </div>
-                </section>
+            <section class="Redes-sociales">
+                <div class="icons">
+                    <h5>¡SÍGUENOS!</h3>
+                        <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+                </div>
+            </section>
 
-                <section class="Legal">
-                    <h5>LEGAL</h3>
+            <section class="Legal">
+                <h5>LEGAL</h3>
                     <ul class="legal-list">
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Cookies</a></li>
                         <li><a href="#">Legal</a></li>
                     </ul>
-                </section>
+            </section>
 
-            </div>
-        </footer>
+        </div>
+    </footer>
 
-    </body>
+</body>
 
 </html>
