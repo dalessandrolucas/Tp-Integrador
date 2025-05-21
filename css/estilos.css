@@ -266,6 +266,137 @@ hr {
 /* FIN VISTA DETALLADA */
 
 
+/* VISTA PERFIL  */
+.perfil-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .perfil-container .perfil-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .perfil-container .perfil-usuario img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  
+  .perfil-container .perfil-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .perfil-container .perfil-formulario .formulario-izq,
+  .perfil-container .perfil-formulario .formulario-der {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 300px;
+  }
+  
+  .perfil-container .perfil-formulario .formulario-izq img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .formulario-izq p {
+    margin: 5px 0;
+    text-align: left;
+  }
+  .grupo-tarjeta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .grupo-tarjeta {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input-peq {
+    flex: 3;
+  }
+  
+  .input-code {
+    flex: 1;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+
+  .seccion {
+    margin-bottom: 25px;
+  }
+  
+  .seccion h3 {
+    margin-bottom: 10px;
+  }
+  
+  .metodos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .perfil-botones,
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .btn-verde {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-rojo {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+/* FIN VISTA PERFIL*/
+
+
 
 /*INICIO FOOTER */
 

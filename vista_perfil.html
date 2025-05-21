@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./CSS/estilos.css" />
+  <title>Pelix - Perfil</title>
+</head>
+
+<body class="Home">
+  <header>
+    <div class="logo-nav-container">
+      <a href="index.html">
+        <img src="./assets/logo.png" alt="Logo" class="logo" />
+      </a>
+      <nav class="menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./vista_series.html">Series</a></li>
+          <li><a href="./vista_peliculas.html">Películas</a></li>
+          <li><a class="perfil" href="./vista_perfil.html">Perfil</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="perfil-container">
+    <div class="perfil-usuario">
+      <img src="./assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif" alt="Avatar de usuario">
+    </div>
+
+    <div class="perfil-formulario">
+      <div class="formulario-izq">
+        <p><strong>Nombre de usuario:</strong> usuario123</p>
+        <p><strong>E-mail:</strong> usuario@gmail.com</p>
+
+        <label for="pass-actual">Contraseña:</label>
+        <input type="password" id="pass-actual" value="************" readonly>
+
+        <label for="pass-nueva">Nueva contraseña:</label>
+        <input type="password" id="pass-nueva" placeholder="Ingrese nueva contraseña" >
+
+        <label for="pass-repetir">Repetir contraseña:</label>
+        <input type="password" id="pass-repetir" placeholder="Ingrese nueva contraseña">
+      </div>
+
+      <div class="formulario-der">
+        <p><strong>Método de pago</strong></p>
+
+        <div class="grupo-tarjeta">
+          <input type="text" placeholder="Número de tarjeta" class="input-peq" >
+          <input type="text" placeholder="XXX" class="input-code">
+        </div>
+        <label><input type="radio" name="metodo"> Cupón de pago</label><br>
+        <label><input type="checkbox" checked> Pago fácil</label>
+        <label><input type="checkbox"> RapiPago</label>
+
+        <label><input type="radio" name="metodo"> Transferencia bancaria</label>
+        <p>CBU: 2183909411100018971375</p>
+      </div>
+    </div>
+
+    <div class="perfil-botones">
+      <button class="btn-verde">Guardar cambios</button>
+      <button class="btn-rojo">Cancelar subscripción</button>
+    </div>
+  </main>
+
+  <hr>
+
+</body>
+</html>
