@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,47 +27,62 @@
 
   <main class="perfil-container">
     <div class="perfil-usuario">
-      <img src="./assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif" alt="Avatar de usuario">
+      <img
+        src="./assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif"
+        alt="Avatar de usuario">
     </div>
 
     <div class="perfil-formulario">
       <div class="formulario-izq">
-        <p><strong>Nombre de usuario:</strong> usuario123</p>
-        <p><strong>E-mail:</strong> usuario@gmail.com</p>
-
-        <label for="pass-actual">Contraseña:</label>
-        <input type="password" id="pass-actual" value="************" readonly>
-
-        <label for="pass-nueva">Nueva contraseña:</label>
-        <input type="password" id="pass-nueva" placeholder="Ingrese nueva contraseña" >
-
-        <label for="pass-repetir">Repetir contraseña:</label>
-        <input type="password" id="pass-repetir" placeholder="Ingrese nueva contraseña">
+        <div class="campo">
+          <label for="usuario">Nombre de usuario:</label>
+          <input type="text" id="usuario" value="usuario123" readonly>
+        </div>
+        <div class="campo">
+          <label for="email">E-mail:</label>
+          <input type="text" id="email" value="usuario@gmail.com" readonly>
+        </div>
+        <div class="campo">
+          <label for="pass-actual">Contraseña:</label>
+          <input type="password" id="pass-actual" value="Ingrese contraseña" readonly>
+        </div>
+        <div class="campo">
+          <label for="pass-nueva">Nueva contraseña:</label>
+          <input type="password" id="pass-nueva" placeholder="Ingrese nueva contraseña">
+        </div>
+        <div class="campo">
+          <label for="pass-repetir">Repetir contraseña:</label>
+          <input type="password" id="pass-repetir" placeholder="Ingrese nueva contraseña">
+        </div>
       </div>
 
       <div class="formulario-der">
-        <p><strong>Método de pago</strong></p>
-
+        <p>Método de pago</p>
+        <label><input type="radio" name="metodo"> Tarjeta de crédito</label>
         <div class="grupo-tarjeta">
-          <input type="text" placeholder="Número de tarjeta" class="input-peq" >
+          <input type="text" placeholder="Número de tarjeta" class="input-peq">
           <input type="text" placeholder="XXX" class="input-code">
         </div>
-        <label><input type="radio" name="metodo"> Cupón de pago</label><br>
-        <label><input type="checkbox" checked> Pago fácil</label>
-        <label><input type="checkbox"> RapiPago</label>
+        <label><input type="radio" name="metodo" checked> Cupón de pago</label>
+
+        <div class="grupo-cupones">
+          <label><input type="checkbox" checked> Pago Fácil</label>
+          <label><input type="checkbox"> RapiPago</label>
+        </div>
 
         <label><input type="radio" name="metodo"> Transferencia bancaria</label>
-        <p>CBU: 2183909411100018971375</p>
+        <p class="cbu">CBU : 2183909411100018971375</p>
       </div>
     </div>
 
     <div class="perfil-botones">
-      <button class="btn-verde">Guardar cambios</button>
+      <a href="./index.html" class="btn-verde">Guardar cambios</a>
       <button class="btn-rojo">Cancelar subscripción</button>
     </div>
   </main>
-
   <hr>
 
+
 </body>
+
 </html>
