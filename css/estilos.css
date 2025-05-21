@@ -407,40 +407,6 @@ hr {
     background-color: #d7372a;
 }
 
-/* RESPONSIVE  */
-
-
-@media (max-width: 768px) {
-    .perfil-formulario {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .formulario-izq {
-        grid-template-columns: 1fr;
-    }
-
-    .campo label {
-        text-align: left;
-    }
-
-    .grupo-tarjeta,
-    .grupo-cupones {
-        flex-direction: column;
-        margin-left: 0;
-    }
-
-    .perfil-botones {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 40px;
-    }
-
-    .btn-verde,
-    .btn-rojo {
-        width: 100%;
-    }
-}
 
 /*FIN VISTA PERFIL */
 
@@ -686,6 +652,35 @@ hr {
   .form_registro{
     margin: 10px 0;
     width: 100%;
+    }
+    .perfil-formulario {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .formulario-izq {
+        grid-template-columns: 1fr;
+    }
+
+    .campo label {
+        text-align: left;
+    }
+
+    .grupo-tarjeta,
+    .grupo-cupones {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .perfil-botones {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 40px;
+    }
+
+    .btn-verde,
+    .btn-rojo {
+        width: 100%;
+    }
   }
-  
-}
+  /* RESPONSIVE  */
