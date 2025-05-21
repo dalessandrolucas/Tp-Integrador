@@ -477,6 +477,7 @@ hr {
 }
 
 /*FIN FOOTER */
+<<<<<<< Updated upstream
 /* LOGIN */
 .img-banner{
     position: relative; /* El contenedor de la imagen */
@@ -684,3 +685,70 @@ hr {
     }
   }
   /* RESPONSIVE  */
+=======
+
+/* FOOTER PELICULAS Y SERIES */
+
+.footer-peliculas {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    text-align: center;
+    align-content: center;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+    background-color: black;
+    margin-top: 30px;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 0;
+
+
+}
+
+.Menu a {
+    color: white;
+}
+
+.Menu li {
+    display: flex;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.icons h5 {
+    margin-bottom: 10px;
+}
+
+.icons a {
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+}
+
+.legal-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    flex-direction: column;
+    list-style: none;
+    position: left;
+    padding: 0;
+}
+
+.legal-list a {
+    color: white;
+}
+
+.footer-container a:hover {
+    color: gray;
+    transition-duration: 0.4s;
+}
+>>>>>>> Stashed changes
