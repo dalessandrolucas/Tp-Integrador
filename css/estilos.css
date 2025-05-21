@@ -56,6 +56,7 @@ a:hover {
 
 /* FINAL NAV */
 
+
 /* IMAGEN HERO*/
 .eventos-top {
     color: white;
@@ -113,16 +114,17 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .Cartelera h2 {
     margin-left: 30px;
+    padding-top: 30px;
 }
 
 .container-cards {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 30px;
 
 }
@@ -401,14 +403,208 @@ hr {
 .btn-rojo {
     background-color: #f44336;
     color: white;
+<<<<<<< Updated upstream
 }
 
 .btn-rojo:hover {
     background-color: #d7372a;
 }
+=======
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+/* FIN VISTA PERFIL*/
+>>>>>>> Stashed changes
 
+/* INICIO VISTA REGISTRO */
+/* LOGIN */
 
+<<<<<<< Updated upstream
 /*FIN VISTA PERFIL */
+=======
+.img-banner{
+    position: relative; /* El contenedor de la imagen */
+    width: 100%; /* Ancho del contenedor */
+    height: 200px; /* Altura del contenedor */
+    display: flex; /* Usar flexbox para alinear */
+    flex-direction: column; /* Columna para alinear la imagen y el texto */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+}
+.img-banner img{
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: 200px; /* Imagen ocupa todo el alto del contenedor */
+    object-fit: cover; /* Ajustar la imagen a la proporción de la imagen */
+}
+.banner-texto{
+    position: absolute; /* Posicionamiento absoluto */
+    top: 60%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar el texto */
+    color: white; /* Texto blanco */
+    text-align: center; /* Alinear el texto centrado */
+}
+.banner-texto h1{
+    font-size: 50px; /* Tamaño del texto */
+}
+.banner-texto p{
+    font-size: 20px; /* Tamaño del texto */
+}
+
+.enlace{
+    color: white;
+    text-decoration: underline;
+}
+
+/* REGISTRO  */
+.main_registro{
+    display: flex;
+    width: 100%;
+    max-width: 2040px;
+    justify-content: center;
+    margin-top: 5px;
+} 
+.form_registro{
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #333;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form_registro h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input_field {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input_field label {
+    width: 40%;
+    text-align: left;
+    padding-right: 15px;
+}
+.input_field input[type="text"],
+.input_field input[type="email"],
+.input_field input[type="password"] {
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+}
+.input_pago{
+    width: 100%;
+    margin-top: 10px;
+}
+.input_radio{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 18px;
+}
+.input_radio input[type="radio"]{
+    margin-right: 10px;
+}
+.input_Tarjeta{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin: 0px 0px 0px 10px;
+    
+}
+.box_tarjeta{
+    width: 65%;
+    padding: 10px;border-radius: 4px;
+}
+.box_clave{
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+    margin-right: 20px;border-radius: 4px;
+}
+.input_checkbox{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-around;
+}
+.input_checkbox input[type="checkbox"]{
+    margin-right: 10px;
+}
+.btn{
+    width: 200px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: none;
+    background: white;
+    color: black;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn:hover{
+    background: #d40303;
+    color: white;
+}
+
+.input_field_btns{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between; /* Espaciado horizontal */
+    width: 100%; 
+}  
+.input_field_btns .btn{
+    margin-bottom: 10px; 
+    width: 48%; 
+}
+.bottom{
+    justify-content: center;
+}
+
+/* LOGIN Responsive */
+@media(max-width: 420px) {
+    .img-banner{
+        height: 150px;
+        img{
+            height: 150px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .input_field_btns{	
+    flex-direction: column; /* En la siguiente línea, los botones se apilan */
+    justify-content: center; /* Centrar los botones verticalmente */
+  }
+
+  .input_field_btns .btn{
+    width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+  }
+  .main_registro{
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_registro{
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+}
+/* FIN VISTA REGISTRO */
+>>>>>>> Stashed changes
 
 /*INICIO FOOTER */
 
@@ -422,6 +618,8 @@ hr {
     align-content: center;
     padding-bottom: 50px;
     flex-wrap: wrap;
+    margin-top: 50px;
+    background-color: black;
 }
 
 .menu-list {
@@ -477,6 +675,7 @@ hr {
 }
 
 /*FIN FOOTER */
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 /* LOGIN */
 .img-banner{
@@ -751,4 +950,148 @@ hr {
     color: gray;
     transition-duration: 0.4s;
 }
+>>>>>>> Stashed changes
+=======
+
+
+/* INICIO MEDIAQUARIES VISTA HOME */
+@media (min-width: 320px) {
+  body {
+    font-size: 12px;
+  }
+   nav {
+    font-size: 10px;
+  }
+
+  .logo{
+    width: 50px;
+    height: 25px;
+  }
+
+  .card-img{
+    width: 120px;
+    height: 100px;
+  }
+
+  .card-img-hero{
+    width: 300px;
+    height: 200px;
+  }
+
+  .select-categorias{
+    width: 80px;
+    height: 30px;
+  }
+
+  .search{
+     width: 80px;
+    height: 30px;
+  }
+
+  .menu a{
+    font-size: 8px;
+    
+  }
+
+}
+
+/* Teléfonos grandes (≥576px) */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .logo{
+    width: 80px;
+    height: 35px;
+  }
+
+   .menu a{
+    font-size: 18px;
+  }
+
+  .card-img-hero{
+    width: 420px;
+    height: 300px;
+  }
+
+   .card-img{
+    width: 180px;
+    height: 120px;
+  }
+
+  .descripcion{
+    font-size: 15px;
+    display: flex;
+    position: relative;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .logo{
+    width: 80px;
+    height: 35px;
+  }
+
+   .menu a{
+    font-size: 25px;
+  }
+
+  .card-img-hero{
+    width: 540px;
+    height: 320px;
+  }
+
+   .card-img{
+    width: 320px;
+    height: 200px;
+    margin: 1px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo{
+    width: 80px;
+    height: 35px;
+  }
+
+  .img-detallada{
+    width: 540px;
+    height: 320px;
+  }
+
+   .card-img{
+    width: 320px;
+    height: 200px;
+    
+  }
+}
+@media (min-width: 1536px) {
+
+    body{
+        font-size: 18px;
+    }
+
+  .logo{
+    width: 80px;
+    height: 35px;
+  }
+
+  .card-img-hero{
+    width: 540px;
+    height: 320px;
+  }
+
+   .card-img{
+    width: 320px;
+    height: 200px;
+  }
+}
+
+
+
+
+/* INICIO MEDIAQUARIES VISTA PELICULAS */
 >>>>>>> Stashed changes
