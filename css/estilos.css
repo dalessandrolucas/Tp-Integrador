@@ -174,6 +174,7 @@ a:hover {
 
 .Cartelera h2 {
     margin-left: 30px;
+    font-size: 25px;
 }
 
 .container-cards {
@@ -181,6 +182,7 @@ a:hover {
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
+    padding: 2px;
 
 }
 
@@ -193,6 +195,8 @@ a:hover {
     text-shadow: 5px 1px 2px black;
     color: white;
 }
+
+
 
 .card-img:hover {
     filter: grayscale(50%);
@@ -213,9 +217,7 @@ hr {
 /* INICIO VISTA DETALLADA */
 
 .body-peliculas{
-    background-image: url(../assets/fondo-rojo.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: black;
 }
 
 .container-pelicula {
@@ -227,10 +229,6 @@ hr {
     justify-content: space-between;
 }
 
-.descripcion {
-    margin-left: 22px;
-    font-size: 25px;
-}
 
 .img-boton {
     text-align: center;
@@ -264,7 +262,9 @@ hr {
     margin-left: 30px;
 }
 
-
+.descripcion h1, p{
+  margin-left: 30px;
+}
 /* FIN VISTA DETALLADA */
 
 
@@ -397,11 +397,157 @@ hr {
   
 /* FIN VISTA PERFIL*/
 
+/* LOGIN */
+.img-banner{
+    position: relative; /* El contenedor de la imagen */
+    width: 100%; /* Ancho del contenedor */
+    height: 200px; /* Altura del contenedor */
+    display: flex; /* Usar flexbox para alinear */
+    flex-direction: column; /* Columna para alinear la imagen y el texto */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+}
+.img-banner img{
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: 200px; /* Imagen ocupa todo el alto del contenedor */
+    object-fit: cover; /* Ajustar la imagen a la proporción de la imagen */
+}
+.banner-texto{
+    position: absolute; /* Posicionamiento absoluto */
+    top: 60%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar el texto */
+    color: white; /* Texto blanco */
+    text-align: center; /* Alinear el texto centrado */
+}
+.banner-texto h1{
+    font-size: 50px; /* Tamaño del texto */
+}
+.banner-texto p{
+    font-size: 20px; /* Tamaño del texto */
+}
 
+.enlace{
+    color: white;
+    text-decoration: underline;
+}
+/* INICIO VISTA REGISTRO*/
+.main_registro{
+    display: flex;
+    width: 100%;
+    max-width: 2040px;
+    justify-content: center;
+    margin-top: 5px;
+} 
+.form_registro{
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #333;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form_registro h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input_field {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input_field label {
+    width: 40%;
+    text-align: left;
+    padding-right: 15px;
+}
+.input_field input[type="text"],
+.input_field input[type="email"],
+.input_field input[type="password"] {
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+}
+.input_pago{
+    width: 100%;
+    margin-top: 10px;
+}
+.input_radio{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 18px;
+}
+.input_radio input[type="radio"]{
+    margin-right: 10px;
+}
+.input_Tarjeta{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin: 0px 0px 0px 10px;
+    
+}
+.box_tarjeta{
+    width: 65%;
+    padding: 10px;border-radius: 4px;
+}
+.box_clave{
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+    margin-right: 20px;border-radius: 4px;
+}
+.input_checkbox{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-around;
+}
+.input_checkbox input[type="checkbox"]{
+    margin-right: 10px;
+}
+.btn{
+    width: 200px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: none;
+    background: white;
+    color: black;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn:hover{
+    background: #d40303;
+    color: white;
+}
+
+.input_field_btns{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between; /* Espaciado horizontal */
+    width: 100%; 
+}  
+.input_field_btns .btn{
+    margin-bottom: 10px; 
+    width: 48%; 
+}
+.bottom{
+    justify-content: center;
+}
+/* FIN VISTA REGISTRO*/
 
 /*INICIO FOOTER */
-
-
 
 .footer-container {
     display: flex;
@@ -422,8 +568,6 @@ hr {
     gap: 10px;
     margin-top: 8px;
     padding: 0;
-
-
 
 }
 
@@ -540,11 +684,6 @@ hr {
     height: 120px;
   }
 
-  .descripcion{
-    font-size: 15px;
-    display: flex;
-    position: relative;
-  }
 
 }
 
@@ -661,9 +800,10 @@ hr {
   }
 
   .descripcion{
-    font-size: 15px;
-    display: flex;
-    position: relative;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+  
   }
 
 }
@@ -684,7 +824,64 @@ hr {
    .card-img{
     width: 320px;
     height: 200px;
-    margin: 1px;
   }
 }
 /* INICIO MEDIAQUARIES VISTA PELICULAS */
+
+/* LOGIN Responsive */
+@media(max-width: 420px) {
+    .img-banner{
+        height: 150px;
+        img{
+            height: 150px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .input_field_btns{	
+    flex-direction: column; /* En la siguiente línea, los botones se apilan */
+    justify-content: center; /* Centrar los botones verticalmente */
+  }
+
+  .input_field_btns .btn{
+    width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+  }
+  .main_registro{
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_registro{
+    margin: 10px 0;
+    width: 100%;
+    }
+    .perfil-formulario {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .formulario-izq {
+        grid-template-columns: 1fr;
+    }
+
+    .campo label {
+        text-align: left;
+    }
+
+    .grupo-tarjeta,
+    .grupo-cupones {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .perfil-botones {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 40px;
+    }
+
+    .btn-verde,
+    .btn-rojo {
+        width: 100%;
+    }
+  }
+  /* LOGIN RESPONSIVE  */
