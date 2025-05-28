@@ -270,7 +270,7 @@ hr {
 /* FIN VISTA DETALLADA */
 
 
-/* VISTA PERFIL  */
+/* INICIO VISTA PERFIL  */
 .perfil-container {
     max-width: 1000px;
     margin: 40px auto;
@@ -376,45 +376,46 @@ hr {
     gap: 20px;
     margin-top: 20px;
   }
-  
-  
-  
+   
 /* FIN VISTA PERFIL*/
 
-/* LOGIN */
+/* INICIO LOGIN */
 .img-banner{
-    position: relative; /* El contenedor de la imagen */
-    width: 100%; /* Ancho del contenedor */
-    height: 200px; /* Altura del contenedor */
-    display: flex; /* Usar flexbox para alinear */
-    flex-direction: column; /* Columna para alinear la imagen y el texto */
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .img-banner img{
-    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
-    height: 200px; /* Imagen ocupa todo el alto del contenedor */
-    object-fit: cover; /* Ajustar la imagen a la proporción de la imagen */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 .banner-texto{
-    position: absolute; /* Posicionamiento absoluto */
-    top: 60%; /* Centrar verticalmente */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translate(-50%, -50%); /* Ajustar la posición para centrar el texto */
-    color: white; /* Texto blanco */
-    text-align: center; /* Alinear el texto centrado */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
 }
 .banner-texto h1{
-    font-size: 50px; /* Tamaño del texto */
+    font-size: 50px;
 }
 .banner-texto p{
-    font-size: 20px; /* Tamaño del texto */
+    font-size: 20px;
 }
 
 .enlace{
     color: white;
     text-decoration: underline;
 }
+
+/* FIN LOGIN */
+
 /* INICIO VISTA REGISTRO*/
 .main_registro{
     display: flex;
@@ -519,7 +520,7 @@ hr {
 .input_field_btns{
     display: flex;
     margin-top: 30px;
-    justify-content: space-between; /* Espaciado horizontal */
+    justify-content: space-between;
     width: 100%; 
 }  
 .input_field_btns .btn{
@@ -635,12 +636,6 @@ hr {
     width: 50px;
     height: 25px;
   }
-
-  /* .card-img{
-    width: 120px;
-    height: 100px;
-  } */
-
   .card-img-hero{
     width: 300px;
     height: 200px;
@@ -844,7 +839,7 @@ hr {
 }
 /* INICIO MEDIAQUARIES VISTA PELICULAS */
 
-/* LOGIN Responsive */
+/* INICIO LOGIN RESPONSIVE */
 @media(max-width: 420px) {
     .img-banner{
         height: 150px;
@@ -855,12 +850,12 @@ hr {
 }
 @media (max-width: 768px) {
     .input_field_btns{	
-    flex-direction: column; /* En la siguiente línea, los botones se apilan */
-    justify-content: center; /* Centrar los botones verticalmente */
+    flex-direction: column;
+    justify-content: center;
   }
 
   .input_field_btns .btn{
-    width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+    width: 100%;
   }
   .main_registro{
     flex-direction: column;
@@ -900,4 +895,4 @@ hr {
         width: 100%;
     }
   }
-  /* LOGIN RESPONSIVE  */
+  /* FIN LOGIN RESPONSIVE  */
