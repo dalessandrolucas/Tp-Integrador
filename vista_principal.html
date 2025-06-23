@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite" />
 </head>
 
 <body class="Home">
@@ -19,7 +22,7 @@
             </a>
             <nav class="menu">
                 <ul>
-                    <li><a href="vista_principal.html">Home</a></li>
+                    <li><a onclick="filtrarPorTipo('todos')" href="vista_principal.html">Home</a></li>
                     <li><a href="vista_series.html">Series</a></li>
                     <li><a href="vista_peliculas.html">Películas</a></li>
                     <li><a href="vista_perfil.html">Perfil</a></li>
@@ -29,14 +32,17 @@
         </div>
     </header>
 
-    <section class="eventos-top">
-        <div class="img-hero" justify-content-center;>
+    <section class="eventos-top" id="top">
+        <div class="img-hero" data-tipo="serie" data-nombre="el eternauta" data-categoria="ciencia-ficcion">
             <a href="vista_series.html">
-                <img src="assets/El-eternauta.webp" alt="El-eternauta" class="card-img-hero">
+
+                <img id="hero" src="assets/El-eternauta.webp" alt="El-eternauta" class="card-img-hero">
                 <div class="card-body-hero">
                     <h5 class="card-title">El Eternauta</h5>
                 </div>
             </a>
+            <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
+
         </div>
 
     </section>
@@ -44,136 +50,162 @@
     <div class="categorias-container">
         <p>Categorías</p>
         <br />
-        <select class="select-categorias">
-            <option value="1">Drama</option>
-            <option value="2">Comedia</option>
-            <option value="3">Ciencia</option>
-            <option value="4">Ficción</option>
-            <option value="5">Terror</option>
-            <option value="6">Fantasía</option>
-            <option value="7">Misterio</option>
-            <option value="8">Románticas</option>
-            <option value="9">Deportivas</option>
+        <select class="select-categorias" id="categoriaSelect" onchange="filtrar()">
+            <option value="todos">Todos</option>
+            <option value="serie">Series</option>
+            <option value="pelicula">Peliculas</option>
+            <option value="drama">Drama</option>
+            <option value="comedia">Comedia</option>
+            <option value="ciencia-ficcion">Ciencia Ficción</option>
+            <option value="animadas">Animadas</option>
+            <option value="fantasia">Fantasía</option>
+            <option value="crimen">Crimen</option>
+            <option value="misterio">Misterio</option>
+            <option value="romanticas">Románticas</option>
+            <option value="musical">Musical</option>
         </select>
-        <input type="search" placeholder="Buscar" class="search" />
+        <input type="search" placeholder="Buscar por nombre" class="search" id="busqueda" oninput="filtrar()" />
         <br />
     </div>
 
     <main class="Cartelera">
-        <h2>Series más populares</h2>
+        <h2 id="tituloSeries">Series más populares</h2>
         <br>
-        <div class="container-cards">
-
-            <div class="card">
+        <div class="container-cards" id="cards">
+            <div class="card" data-tipo="serie" data-nombre="dr house" data-categoria="drama">
                 <a href="VistasSeries/vista_series_DrHouse.html">
                     <img src="assets/DrHouse.png" alt="Dr.House" class="card-img" width="320" height="200">
                     <div class="card-body">
                         <h5 class="card-title">Dr.House</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
+
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="serie" data-nombre="better call saul" data-categoria="crimen drama">
                 <a href="VistasSeries/vista_series_BCS.html">
                     <img src="assets/BetterCallSaul.png" alt="better-call-saul" class="card-img" width="320"
                         height="200">
                     <div class="card-body">
-                        <h5 class="card-title">Better Call Saul</h5>
+                        <h5 class="card-title">Better
+                            Call Saul</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="serie" data-nombre="breaking bad" data-categoria="crimen drama">
                 <a href="VistasSeries/vista_series_BB.html">
                     <img src="assets/Breaking-bad.webp" alt="Breaking-bad" class="card-img">
                     <div class="card-body">
-                        <h5 class="card-title">Breaking bad</h5>
+                        <h5 class="card-title">Breaking Bad</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
+
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="serie" data-nombre="dexter" data-categoria="crimen drama misterio">
                 <a href="VistasSeries/vista_series_Dexter.html">
                     <img src="assets/Dexter-portada.webp" alt="Dexter" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Dexter</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="serie" data-nombre="the vampire diaries" data-categoria="fantasia romanticas">
                 <a href="VistasSeries/vista_series_TVD.html">
-                    <img src="assets/vampire.Diaries.webp" alt="vampire-Diaries" class="card-img">
+                    <img src="assets/vampire.Diaries.webp" alt="the vampire diaries" class="card-img">
                     <div class="card-body">
-                        <h5 class="card-title"> The vampire Diaries</h5>
+                        <h5 class="card-title">The
+                            Vampire Diaries</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
-            <div class="card">
-                <a href="./VistasSeries/vista_series_TR.html">
-                    <img src="assets/resident.jpg" alt="Shrek" class="card-img">
+
+            <div class="card" data-tipo="serie" data-nombre="the resident" data-categoria="drama">
+                <a href="VistasSeries/vista_series_TR.html">
+                    <img src="assets/resident.jpg" alt="the resident" class="card-img">
                     <div class="card-body">
-                        <h5 class="card-title">The Resident</h5>
+                        <h5 class="card-title">TheResident</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
+
         </div>
 
-        <h2>Peliculas Similares</h2>
+        <h2 id="tituloPeliculas">Peliculas Similares</h2>
         <br>
         <div class="container-cards">
 
-            <div class="card">
+            <div class="card" data-tipo="pelicula" data-nombre="lluvia de hamburguesas 2"
+                data-categoria="animadas fantasia comedia">
                 <a href="vistas-peliculas/vista_pelicula_LDH.html">
                     <img src="assets/LluviaDeHamburguesas2.webp" alt="LluviaDeHamburguesas2" class="card-img">
                     <div class="card-body">
-                        <h5 class="card-title">Lluvia de Hamburguesas 2</h5>
+                        <h5 class="card-title">Lluvia de
+                            Hamburguesas 2</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="pelicula" data-nombre="hotel transylvania" data-categoria="animadas fantasia">
                 <a href="vistas-peliculas/vista_pelicula_HT.html">
-                    <img src="assets/Hotel Transylvania.webp" alt="Hotel-Transylvania" class="card-img">
+                    <img src="assets/Hotel Transylvania.webp" alt="HotelTransylvania" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Hotel Transylvania</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="pelicula" data-nombre="mi villano favorito 3"
+                data-categoria="animadas comedia">
                 <a href="vistas-peliculas/vista_pelicula_MVF3.html">
                     <img src="assets/MVF3.webp" alt="MiVillanoFavorito" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Mi Villano Favorito 3</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
 
-            <div class="card">
+            <div class="card" data-tipo="pelicula" data-nombre="shrek tercero" data-categoria="animadas fantasia">
                 <a href="vistas-peliculas/vista_pelicula_S3.html">
                     <img src="assets/Shrek3.webp" alt="Shrek3" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Shrek Tercero</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
-            <div class="card">
-                <a href="./vistas-peliculas/vista_pelicula_SRK.html">
+
+            <div class="card" data-tipo="pelicula" data-nombre="shrek" data-categoria="animadas fantasia">
+                <a href="vistas-peliculas/vista_pelicula_SRK.html">
                     <img src="assets/shrek.jpg" alt="Shrek" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Shrek</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
-            <div class="card">
+
+            <div class="card" data-tipo="pelicula" data-nombre="trolls" data-categoria="animadas comedia musical">
                 <a href="vistas-peliculas/vista_pelicula_TROLLS.html">
                     <img src="assets/Trolls.webp" alt="Trolls" class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Trolls</h5>
                     </div>
                 </a>
+                <button class="favorito"><span class="material-symbols-outlined">favorite</span></button>
             </div>
+
         </div>
 
     </main>
@@ -213,6 +245,7 @@
 
         </div>
     </footer>
-
+    <script src="JS/java_script.js"></script>
 </body>
+
 </html>
