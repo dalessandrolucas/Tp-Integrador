@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Pelix - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite" />
+</head>
+
+<body>
+    <div id="favoritos-container"></div>
+    <header>
+        <div class="logo-nav-container">
+            <a href="vista_principal.html">
+                <img src="assets/logo.png" alt="Logo" class="logo" />
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a onclick="filtrarPorTipo('todos')" href="vista_principal.html">Home</a></li>
+                    <li><a href="vista_series.html">Series</a></li>
+                    <li><a href="vista_peliculas.html">Películas</a></li>
+                    <li><a href="vista_perfil.html">Perfil</a></li>
+                    <li><a href="index.html">Salir</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="favoritos-series" id="favs-serie">
+        <h3>Tus series favoritas</h3>
+        <div class="container-cards" id="cards-series"></div>
+    </section>
+
+    <hr>
+
+    <section class="favoritos-peliculas" id="favs-pelicula">
+        <h3>Tus peliculas favoritas</h3>
+        <div class="container-cards" id="cards-peliculas"></div>
+    </section>
+
+    <hr>
+
+    <footer>
+        <div class="footer-container">
+            <section class="Menu">
+                <h5>MENÚ</h3>
+                    <ul class="menu-list">
+                        <li><a href="vista_principal.html">Home</a></li>
+                        <li><a href="vista_series.html">Series</a></li>
+                        <li><a href="vista_peliculas.html">Películas</a></li>
+                        <li><a href="vista_perfil.html">Perfil</a></li>
+                    </ul>
+            </section>
+
+            <section class="Redes-sociales">
+                <div class="icons">
+                    <h5>¡SÍGUENOS!</h3>
+                        <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+                </div>
+            </section>
+
+            <section class="Legal">
+                <h5>LEGAL</h3>
+                    <ul class="legal-list">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+            </section>
+
+        </div>
+    </footer>
+    <script src="JS/favoritos.js"></script>
+
+</body>
+
+</html>

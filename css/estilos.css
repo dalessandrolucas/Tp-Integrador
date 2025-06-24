@@ -91,23 +91,30 @@ a:hover {
   display: inline-block;
 }
 
-.favorito {
+.favorito-cards {
   position: absolute;
-  top: 20px;
-  right: 10px;
-  z-index: 1;
-}
-
-.favorito button {
-  background: none;
+  right: 5px;
+  background: transparent;
   border: none;
+  font-size: 1rem;
+  color: gray;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  transition: .2s linear;
+  
 }
 
-.favorito .material-symbols-outlined {
-  font-size: 32px;
-  color: white;
+.favorito-cards:hover{
+  border-radius: 50%;
+  color: red;
+  transform: scale(1.2) rotate(20deg);
+  color: #ff3333;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 2px #ff3333);
 }
+
 
 /* IMAGEN HERO*/
 
@@ -145,6 +152,7 @@ a:hover {
   text-align: center;
   margin-left: 30px;
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .container-cards {
@@ -170,20 +178,29 @@ a:hover {
   position: relative;
 }
 
-.favorito {
+.favorito-cards {
   position: absolute;
   top: 5px;
   right: 5px;
   background: transparent;
   border: none;
-  font-size: 5px;
+  font-size: 1rem;
   color: gray;
   cursor: pointer;
   padding: 0;
   margin: 0;
   z-index: 1;
+  transition: .2s linear;
 }
 
+.favorito-cards:hover{
+  border-radius: 50%;
+  color: red;
+}
+
+.favorito-activo {
+  color: red;
+}
 /*INICIO CARTELERA */
 
 /* INICIO CATEGORIAS*/
@@ -648,6 +665,7 @@ input[type="password"] {
   flex-wrap: wrap;
   margin-top: 50px;
   background-color: black;
+  
 }
 
 .menu-list {
@@ -702,6 +720,18 @@ input[type="password"] {
 
 /*FIN FOOTER */
 
+
+/*INICIO VISTA FAVORITOS*/
+h3{
+  display: flex;
+  justify-content: center;
+  padding: 2%
+}
+
+.favorito-cards .favorito-activo {
+  color: red;
+}
+/*FIN VISTA FAVORITOS*/
 
 /* INICIO MEDIAQUARIES VISTA HOME */
 @media (min-width: 320px) {
