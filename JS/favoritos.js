@@ -37,7 +37,9 @@ function filtrar() {
 
   // Obtiene el texto de búsqueda y la categoría seleccionada
   const texto = document.getElementById("busqueda").value.toLowerCase();
-  const seleccion = document.getElementById("categoriaSelect").value.toLowerCase();
+  const seleccion = document
+    .getElementById("categoriaSelect")
+    .value.toLowerCase();
 
   // Recorre todas las cards y decide si mostrarlas u ocultarlas
   document.querySelectorAll(".card").forEach((card) => {
@@ -47,7 +49,10 @@ function filtrar() {
     // Verifica si el nombre incluye el texto buscado
     const coincideNombre = nombre.includes(texto);
     // Verifica si el tipo o la categoría coincide con la selección
-    const coincideFiltro = seleccion === "todos" || tipo === seleccion || categorias.includes(seleccion);
+    const coincideFiltro =
+      seleccion === "todos" ||
+      tipo === seleccion ||
+      categorias.includes(seleccion);
 
     // Muestra u oculta la card según los filtros
     card.style.display = coincideNombre && coincideFiltro ? "block" : "none";
@@ -58,57 +63,58 @@ function filtrar() {
 }
 
 // Cuando la página termina de cargar, ejecuta esta función
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Obtiene los favoritos guardados en localStorage (o un array vacío si no hay)
-  const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+  const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   // Marca los corazones de las cards que ya están en favoritos
-  document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll(".card").forEach((card) => {
     const nombre = card.dataset.nombre;
     // Verifica si este card está en favoritos
-    const esFavorito = favoritos.some(f => f.nombre === nombre);
+    const esFavorito = favoritos.some((f) => f.nombre === nombre);
     // Busca el ícono del corazón dentro del botón
-    const btn = card.querySelector('.favorito-cards i');
+    const btn = card.querySelector(".favorito-cards i");
     // Si está en favoritos, le agrega la clase para que se vea rojo
     if (btn && esFavorito) {
-      btn.classList.add('favorito-activo');
+      btn.classList.add("favorito-activo");
     }
   });
 
   // Busca los contenedores donde se mostrarán las cards de favoritos
-  const seriesContainer = document.getElementById('cards-series');
-  const peliculasContainer = document.getElementById('cards-peliculas');
+  const seriesContainer = document.getElementById("cards-series");
+  const peliculasContainer = document.getElementById("cards-peliculas");
   // Si existen los contenedores (estás en la vista de favoritos)
   if (seriesContainer && peliculasContainer) {
     // Limpia los contenedores
-    seriesContainer.innerHTML = '';
-    peliculasContainer.innerHTML = '';
+    seriesContainer.innerHTML = "";
+    peliculasContainer.innerHTML = "";
     // Si no hay favoritos, muestra un mensaje
     if (favoritos.length === 0) {
-      seriesContainer.innerHTML = '<p>No hay series favoritas guardadas.</p>';
-      peliculasContainer.innerHTML = '<p>No hay películas favoritas guardadas.</p>';
+      seriesContainer.innerHTML = "<p>No hay series favoritas guardadas.</p>";
+      peliculasContainer.innerHTML =
+        "<p>No hay películas favoritas guardadas.</p>";
     } else {
       // Si hay favoritos, crea una card para cada uno y la agrega al contenedor correspondiente
-      favoritos.forEach(fav => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.setAttribute('data-tipo', fav.tipo);
-        card.setAttribute('data-nombre', fav.nombre);
-        card.setAttribute('data-categoria', fav.categoria);
+      favoritos.forEach((fav) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.setAttribute("data-tipo", fav.tipo);
+        card.setAttribute("data-nombre", fav.nombre);
+        card.setAttribute("data-categoria", fav.categoria);
         // El HTML de la card, con el corazón ya rojo
         card.innerHTML = `
-          <a href="#">
-            <img src="${fav.imagen}" alt="${fav.nombre}" class="card-img">
-            <div class="card-body">
-              <h5 class="card-title">${fav.nombre}</h5>
-            </div>
-          </a>
-          <button class="favorito-cards"><i class="fa-solid fa-heart favorito-activo"></i></button>
-        `;
+  <a href="${fav.enlace}">
+    <img src="${fav.imagen}" alt="${fav.nombre}" class="card-img">
+    <div class="card-body">
+      <h5 class="card-title">${fav.nombre}</h5>
+    </div>
+  </a>
+  <button class="favorito-cards"><i class="fa-solid fa-heart favorito-activo"></i></button>
+`;
         // Agrega la card al contenedor de series o películas según corresponda
-        if (fav.tipo === 'serie') {
+        if (fav.tipo === "serie") {
           seriesContainer.appendChild(card);
-        } else if (fav.tipo === 'pelicula') {
+        } else if (fav.tipo === "pelicula") {
           peliculasContainer.appendChild(card);
         }
       });
@@ -117,53 +123,52 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Este evento escucha todos los clicks en la página
-document.addEventListener('click', function(event) {
+document.addEventListener("click", function (event) {
   // Busca si el click fue en un botón de favorito (o en su ícono)
-  const btnFavorito = event.target.closest('.favorito-cards');
+  const btnFavorito = event.target.closest(".favorito-cards");
   if (btnFavorito) {
     // Busca la card a la que pertenece ese botón
-    const card = btnFavorito.closest('.card');
+    const card = btnFavorito.closest(".card");
     if (!card) return;
     // Busca la imagen de la card
-    const img = card.querySelector('img');
+    const img = card.querySelector("img");
     // Crea un objeto con los datos de la card
+    const enlace = card.querySelector("a")
+      ? card.querySelector("a").getAttribute("href")
+      : "#";
     const favorito = {
       nombre: card.dataset.nombre,
       tipo: card.dataset.tipo,
       categoria: card.dataset.categoria,
-      imagen: img ? img.getAttribute('src') : ''
+      imagen: img ? img.getAttribute("src") : "",
+      enlace: enlace,
     };
     // Obtiene los favoritos actuales
-    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
     // Busca si ya está en favoritos
-    const index = favoritos.findIndex(f => f.nombre === favorito.nombre);
+    const index = favoritos.findIndex((f) => f.nombre === favorito.nombre);
 
     if (index === -1) {
       // Si no está, lo agrega a favoritos y pone el corazón rojo
       favoritos.push(favorito);
-      btnFavorito.querySelector('i').classList.add('favorito-activo');
+      btnFavorito.querySelector("i").classList.add("favorito-activo");
     } else {
       // Si ya está, lo quita de favoritos y pone el corazón gris
       favoritos.splice(index, 1);
-      btnFavorito.querySelector('i').classList.remove('favorito-activo');
+      btnFavorito.querySelector("i").classList.remove("favorito-activo");
       // Si estás en la vista de favoritos, elimina la card del DOM
-      if (window.location.pathname.includes('vistas_favoritos.html')) {
+      if (window.location.pathname.includes("vistas_favoritos.html")) {
         card.remove();
         // Si ya no quedan favoritos, muestra el mensaje
-        const favoritosRestantes = document.querySelectorAll('.card');
+        const favoritosRestantes = document.querySelectorAll(".card");
         if (favoritosRestantes.length === 0) {
           const container = card.parentElement;
-          container.innerHTML = '<p>No hay favoritos guardados.</p>';
+          container.innerHTML = "<p>No hay favoritos guardados.</p>";
         }
       }
     }
     // Guarda la lista actualizada de favoritos en localStorage
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
     // No redirige a ninguna página, solo actualiza el estado
   }
 });
-
-
-
- 
-
