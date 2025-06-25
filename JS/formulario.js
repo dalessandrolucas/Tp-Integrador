@@ -431,11 +431,43 @@ document.getElementById('confirmar').addEventListener('click', function() {
             usuario: document.getElementById('usuario').value,
             metodoPago: document.querySelector('input[name="payment"]:checked').value
         };
-        localStorage.getItem('unflixUsers', JSON.stringify(formData));
-        alert('Registro completado exitosamente');
-        irAlLogin();
+        guardarRegistroEnLocalStorage(formData);
     }
+        
+            
 });
+
+function guardarRegistroEnLocalStorage(nuevoUsuario) {
+    // Paso 1: Obtener lo que ya hay en el localStorage
+    const datosGuardados = localStorage.getItem("listasDeUsuarios");
+
+    // Paso 2: Si hay algo, lo convertimos a array; si no, iniciamos uno vacío
+    const lista = datosGuardados ? JSON.parse(datosGuardados) : [];
+    //condicion ternaria para verificar si hay datos guardados
+
+    //paso 3: Verificar si ya existe un usuario con el mismo email o nombre de usuario
+    const existe = lista.some(usuario =>
+        usuario.email === nuevoUsuario.email ||
+        usuario.usuario === nuevoUsuario.usuario
+    );
+
+    if (existe) {
+        alert("Ya existe un usuario con este email o nombre de usuario.");
+        return;
+    }
+    // Paso 4: Agregamos el nuevo objeto
+    lista.push(nuevoUsuario);
+    // Paso 5: Guardamos el array actualizado
+    localStorage.setItem("listasDeUsuarios", JSON.stringify(lista));
+    irAlLogin();
+}
+
+// function cargarRegistroDeLocalStorage() {
+//     const registro = localStorage.getItem('registro');
+//     if (registro) {
+//         formData = JSON.parse(registro);
+//     }
+// }
 
 document.getElementById('cancelar').addEventListener('click', function() {
     irAlLogin();
