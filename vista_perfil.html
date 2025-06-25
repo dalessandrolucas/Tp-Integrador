@@ -29,49 +29,47 @@
     </div>
   </header>
 
-  <form action="vista_principal.html" method="get" class="perfil-container">
-    <div class="perfil-usuario">
-      <img
-        src="assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif"
-        alt="Avatar de usuario">
+  <form id="perfil-form" class="perfil-container">
+  <div class="perfil-usuario">
+    <img id="avatar-img"
+      src="assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif"
+      alt="Avatar de usuario">
+    <p id="usuario-nombre"></p>
+    <p id="usuario-email"></p>
+  </div>
+
+  <div class="perfil-formulario">
+    <div class="formulario-izq">
+      <label for="pass-nueva">Nueva contraseña:</label>
+      <input type="password" id="pass-nueva" class="input-movil" placeholder="Ingrese nueva contraseña" required>
+
+      <label for="pass-repetir">Repetir contraseña:</label>
+      <input type="password" id="pass-repetir" class="input-movil" placeholder="Ingrese nueva contraseña" required>
     </div>
 
-    <div class="perfil-formulario">
-      <div class="formulario-izq">
-        <p><strong>Nombre de usuario:</strong> usuario123</p>
-        <p><strong>E-mail:</strong> usuario@gmail.com</p>
-
-        <label for="pass-actual">Contraseña:</label>
-        <input type="password" id="pass-actual" class="input-movil" value="************" readonly>
-
-        <label for="pass-nueva">Nueva contraseña:</label>
-        <input type="password" id="pass-nueva" class="input-movil" placeholder="Ingrese nueva contraseña" required>
-
-        <label for="pass-repetir">Repetir contraseña:</label>
-        <input type="password" id="pass-repetir" class="input-movil" placeholder="Ingrese nueva contraseña" required>
+    <div class="formulario-der">
+      <p><strong>Método de pago</strong></p>
+      <label><input type="radio" name="metodo" value="tarjeta" id="radio-tarjeta" checked> Tarjeta de débito</label>
+      <div class="grupo-tarjeta" id="grupo-tarjeta" style="display:none;">
+        <input type="number" id="numero-tarjeta" placeholder="Número de tarjeta" class="input-peq input-movil" required>
+        <input type="number" id="clave-tarjeta" placeholder="XXX" class="input-code input-movil" required>
       </div>
-
-      <div class="formulario-der">
-        <p><strong>Método de pago</strong></p>
-        <label><input type="radio" name="metodo" required> Tarjeta de debito</label>
-        <div class="grupo-tarjeta">
-          <input type="number" placeholder="Número de tarjeta" class="input-peq input-movil">
-          <input type="number" placeholder="XXX" class="input-code input-movil">
-        </div>
-        <label><input type="radio" name="metodo" required> Cupón de pago</label>
-        <label><input type="checkbox" checked> Pago fácil</label>
-        <label><input type="checkbox"> RapiPago</label>
-
-        <label><input type="radio" name="metodo" required> Transferencia bancaria</label>
-        <p>CBU: 2183909411100018971375</p>
+      <label><input type="radio" name="metodo" value="cupon" id="radio-cupon" required> Cupón de pago</label>
+      <div class="grupo-cupon" id="grupo-cupon" style="display:none;">
+        <input type="text" id="codigo-cupon" placeholder="Código de cupón" class="input-movil">
       </div>
+      <label><input type="checkbox" id="pago-facil"> Pago fácil</label>
+      <label><input type="checkbox" id="rapipago"> RapiPago</label>
+      <label><input type="radio" name="metodo" value="transferencia" id="radio-transferencia"> Transferencia bancaria</label>
+      <p id="cbu">CBU: 2183909411100018971375</p>
     </div>
-
-    <div class="perfil-botones">
-      <button class="btn btn-verde">Guardar cambios</button>
-      <a href="index.html" class="btn btn-rojo">Cancelar subscripción</a>
-    </div>
-  </form>
+  </div>
+<div id="mensaje-error" style="color: #ff4444; margin-bottom: 10px;"></div>
+  <div class="perfil-botones">
+    <button type="submit" id="btn-guardar" class="btn btn-verde" >Guardar cambios</button>
+    <button type="button" id="btn-cancelar" class="btn btn-rojo">Cancelar subscripción</button>
+  </div>
+</form>
   
   <hr>
 
@@ -109,7 +107,7 @@
 
         </div>
     </footer>
-
+    <script src="JS/perfil.js"></script>
 </body>
 
 </html>
