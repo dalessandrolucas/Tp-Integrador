@@ -1,0 +1,12 @@
+/*Mensaje de error*/
+  .error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-bottom: 2em;
+  }
+  .btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

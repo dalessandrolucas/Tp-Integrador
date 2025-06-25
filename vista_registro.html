@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/formStyle.css">
     <title>Pelix - Registro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -17,68 +18,85 @@
             </a>
         </div>
     </header>
-    <form class="main_registro" action="index.html" method="get">
+    <form class="main_registro" id="registrationForm">
         <section class="form_registro" >
             <h2>Registrarse</h2>
+            <!-- Input de nombre -->
             <div class="input_field">
                 <label>Nombre</label>
-                <input type="text" name="name" placeholder="Ingrese nombre" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre">
             </div>
+            <div class="error-message" id="error-nombre"></div>
+            <!-- Input de apellido -->
             <div class="input_field">
                 <label>Apellido</label>
-                <input type="text" name="surname" placeholder="Ingrese apellido" required>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese apellido">
             </div>
+            <div class="error-message" id="error-apellido"></div>
+            <!-- Input de email -->
             <div class="input_field">
                 <label>Email</label>
-                <input type="email" name="email" placeholder="Ingrese email" required>
+                <input type="email" id="email" name="email" placeholder="Ingrese email">
             </div>
+            <div class="error-message" id="error-email"></div>
+            <!-- Input de usuario -->
             <div class="input_field">
                 <label>Usuario</label>
-                <input type="text" name="user" placeholder="Nombre de usuario" required>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario">
             </div>
+            <div class="error-message" id="error-usuario"></div>
+            <!-- Input de contraseña -->
             <div class="input_field">
                 <label>Contraseña</label>
-                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
             </div>
+            <div class="error-message" id="error-contrasena"></div>
+            <!-- Input de contraseña -->
             <div class="input_field">
                 <label>Repetir contraseña</label>
-                <input type="password" name="password" placeholder="Repetir contraseña" required>   
+                <input type="password" id="repetir-contrasena" name="password" placeholder="Repetir contraseña">
             </div>
+            <div class="error-message" id="error-repetir-contrasena"></div>
         </section>
         <section class="form_registro">
             <h2>Metodo de pago</h2>
             <div class="input_pago">
+                <!-- radio debito -->
                 <div class="input_radio">
-                    <input type="radio" name="radio" class="radio" required> 
+                    <input type="radio" id="debito" name="payment" class="radio"> 
                     <label class="titulo">Tarjeta de debito</label>
                 </div>
-                <div class="input_Tarjeta"> 
-                    <input type="number" name="number" class="box_tarjeta" placeholder="Numero de tarjeta" oninput="this.value = this.value.slice(0, 16)"> 
-                    <input type="number" name="number" class="box_clave" oninput="this.value = this.value.slice(0, 3)" placeholder="X X X">
+                <div class="payment-fields input_field" id="debito-fields"> 
+                    <input type="number" id="numero-tarjeta" name="number" class="box_tarjeta" placeholder="Numero de tarjeta"> 
+                    <input type="number" id="codigo-tarjeta" name="number" class="box_clave" placeholder="X X X" maxlength="3">             
                 </div>
+                <div class="error-message" id="error-numero-tarjeta"></div>
+                <div class="error-message" id="error-codigo-tarjeta"></div>
+                <!-- radio cupon -->
                 <div class="input_radio"> 
-                    <input type="radio" name="radio" class="radio" required> 
+                    <input type="radio" id="cupon" name="payment" class="radio"> 
                     <label class="titulo">Cupon de pago</label>
                 </div>
-                <div class="input_checkbox"> 
-                    <input type="checkbox" name="checkbox"><label>Pago facil</label>
-                    <input type="checkbox" name="checkbox"><label>RapiPago</label>
-                </div>    
+                <div class="payment-fields input_field" id="cupon-fields"> 
+                    <input type="checkbox" id="pago-facil" name="checkbox"><label>Pago facil</label>
+                    <input type="checkbox" id="rapi-pago" name="checkbox"><label>RapiPago</label>
+                </div> 
+                <!-- radio transferencia -->
                 <div class="input_radio">   
-                    <input type="radio" name="radio" class="radio" required>
+                    <input type="radio" id="transferencia" name="payment" class="radio">
                     <label class="titulo">Transferencia Bancaria</label>
                 </div>
-                <div class="input_field">
+                <div class="payment-fields input_field" id="transferencia-fields">
                     <label>CBU</label>
                     <p>2183909411100018971375</p>
                 </div>
                 <div class="input_field_btns">
-                    <input type="submit" value="Confirmar" class="btn">
-                    <a href="index.html" class="btn">Cancelar</a>
+                    <input type="submit" id="confirmar" value="Confirmar" class="btn" disabled>
+                    <input type="button" id="cancelar" value="Cancelar" class="btn">
                 </div>
             </div>
         </section>
     </form>
-
+    <script src="js/formulario.js"></script>
 </body>
 </html>
