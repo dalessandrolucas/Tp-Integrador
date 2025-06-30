@@ -10,6 +10,31 @@ const codigoTarjeta = document.getElementById('codigo-tarjeta');
 const confirmarBtn = document.getElementById('confirmar');
 const cancelarBtn = document.getElementById('cancelar');
 
+// Limitar input del código de tarjeta a solo números y máximo 3 dígitos
+codigoTarjeta.addEventListener('input', function () {
+  // Reemplazar todo lo que no sea número
+  this.value = this.value.replace(/\D/g, '');
+
+  // Cortar si se excede de 3 caracteres
+  if (this.value.length > 3) {
+    this.value = this.value.slice(0, 3);
+  }
+});
+
+// Limitar input de número de tarjeta a 16 dígitos numéricos
+numeroTarjeta.addEventListener('input', function () {
+  // Quitar caracteres no numéricos
+  this.value = this.value.replace(/\D/g, '');
+
+  // Limitar a 16 dígitos
+  if (this.value.length > 16) {
+    this.value = this.value.slice(0, 16);
+    document.getElementById('error-numero-tarjeta').textContent = "Solo se permiten hasta 16 dígitos.";
+  } else {
+    document.getElementById('error-numero-tarjeta').textContent = "";
+  }
+});
+
 // Validaciones regex
 function soloLetras(valor) {
   return /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/.test(valor);
@@ -30,7 +55,8 @@ function validarCodigoTarjeta(valor) {
   return /^[0-9]{3}$/.test(valor) && valor !== "000";
 }
 function validarNumeroTarjeta(valor) {
-  if (!/^\d{16}$/.test(valor)) return false;
+  if (!(/^\d{16}$/.test(valor))) 
+    return false;
   const numeros = valor.split('').map(Number);
   const suma = numeros.slice(0, 15).reduce((a, b) => a + b, 0);
   const ultimo = numeros[15];
@@ -41,8 +67,8 @@ function validarNumeroTarjeta(valor) {
 // Mostrar/ocultar campos de pago según método
 function mostrarCamposPago() {
   document.getElementById('debito-fields').style.display = document.getElementById('debito').checked ? 'block' : 'none';
-  document.getElementById('cupon-fields').style.display = document.getElementById('cupon').checked ? 'block' : 'none';
-  document.getElementById('transferencia-fields').style.display = document.getElementById('transferencia').checked ? 'block' : 'none';
+  document.getElementById('cupon-fields').style.display = document.getElementById('cupon').checked ? 'flex' : 'none';
+  document.getElementById('transferencia-fields').style.display = document.getElementById('transferencia').checked ? 'flex' : 'none';
 }
 ['debito', 'cupon', 'transferencia'].forEach(id => {
   document.getElementById(id).addEventListener('change', mostrarCamposPago);

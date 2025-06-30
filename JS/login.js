@@ -2,7 +2,7 @@ const usuario = document.getElementById("usuario");
 const password = document.getElementById("password");
 const loginButton = document.getElementById("btn-login");
 const form = document.getElementById("form_registro");
-
+document.getElementById('error-mensaje').style.display = "none";
 function checkInputs() {
   if (usuario.value.trim() !== '' && password.value.trim() !== '') {
     loginButton.disabled = false;
@@ -23,10 +23,19 @@ form.addEventListener('submit', function(e) {
   if (encontrado) {
     // Guarda el usuario activo (solo el nombre de usuario)
     localStorage.setItem("usuarioActivo", encontrado.usuario);
-    alert("¡Inicio de sesión exitoso!");
-    window.location.href = "./vista_principal.html";
+    document.getElementById('error-mensaje').style.display = "block";
+    document.getElementById('error-mensaje').style.color = "white";
+    document.getElementById('error-mensaje').textContent = "¡Inicio de sesión exitoso!";
+    document.getElementById('btn-login').style.backgroundColor = "green";
+    document.getElementById('btn-login').style.color = "white";
+
+    setTimeout(() => {
+        window.location.href = "./vista_principal.html"; // Ruta de redirección
+    }, 2000);
+
   } else {
-    alert("Usuario o contraseña incorrectos.");
+    document.getElementById('error-mensaje').style.display = "block";
+    document.getElementById('error-mensaje').textContent = "Usuario o contraseña incorrectos.";
   }
 });
 

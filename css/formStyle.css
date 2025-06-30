@@ -2,7 +2,7 @@
   .error-message {
     color: red;
     font-size: 12px;
-    display: none;
+    display: block;
     margin-bottom: 2em;
   }
   .btn:disabled {
