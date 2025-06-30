@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/formStyle.css">
     <title>Pelix - Recuperar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -19,16 +20,17 @@
     </header>
     <br><br><br>
     <section class="main_registro"> 
-        <form class="form_registro" action="index.html" method="get">
+        <form class="form_registro" action="index.html">
             <h2>Recuperar contraseña</h2>
             <div class="input_field">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Email o número de celular" required>
+                <input type="email" name="email" placeholder="Email o número de celular">
             </div>
             <div class="input_field">
                 <label for="user">Nombre de usuario</label>
-                <input type="text" name="user" placeholder="Nombre de usuario" required> 
+                <input type="text" name="user" placeholder="Nombre de usuario"> 
             </div>
+            <div class="error-message" id="error-mensaje"></div>
             <div class="input_field_btns">
                 <input type="submit" value="Enviar email" class="btn" id="btn-login">
                 <a href="index.html" class="btn">Cancelar</a>
