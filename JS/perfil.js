@@ -2,6 +2,22 @@ window.addEventListener('DOMContentLoaded', function() {
   const usuarioActivo = localStorage.getItem('usuarioActivo');
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
   const usuario = usuarios.find(u => u.usuario === usuarioActivo);
+
+  //Limita el número de digitos de tarjeta
+  document.getElementById('numero-tarjeta').addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '');
+    if (this.value.length > 16) {
+      this.value = this.value.slice(0, 16);
+    }
+  }); 
+  //Limita el número de digitos de clave
+  document.getElementById('clave-tarjeta').addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '');
+    if (this.value.length > 3) {
+      this.value = this.value.slice(0, 3);
+    } 
+  });
+
   if (!usuario) {
     document.getElementById('info-usuario').innerHTML = "<p>No hay usuario logueado.</p>";
     return;
