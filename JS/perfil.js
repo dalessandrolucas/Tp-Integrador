@@ -1,35 +1,24 @@
 window.addEventListener('DOMContentLoaded', function() {
-  const radioTarjeta = document.getElementById('radio-tarjeta');
-  if (radioTarjeta.checked) {
-    document.getElementById('grupo-tarjeta').style.display = 'block';
+  const usuarioActivo = localStorage.getItem('usuarioActivo');
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const usuario = usuarios.find(u => u.usuario === usuarioActivo);
+  if (!usuario) {
+    document.getElementById('info-usuario').innerHTML = "<p>No hay usuario logueado.</p>";
+    return;
   }
-  if (document.getElementById('radio-cupon').checked) {
-    document.getElementById('grupo-cupon').style.display = 'block';
-  }
+  document.getElementById('info-usuario').innerHTML = `
+    <h2 style="margin-bottom:0;">${usuario.nombre || usuario.usuario}</h2>
+    <p style="margin-top:0;"><strong>Email:</strong> ${usuario.email}</p>
+  `;
+  document.getElementById('avatar-img').src = usuario.avatar || "assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif";
+  mostrarCamposMetodoPago();
   actualizarBotonGuardar();
 });
 
-if (!localStorage.getItem('usuario')) {
-  localStorage.setItem('usuario', JSON.stringify({
-    nombre: 'usuario123',
-    email: 'usuario@gmail.com',
-    avatar: 'assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif',
-    metodoPago: '',
-    datosPago: {}
-  }));
-}
-
-let usuario = JSON.parse(localStorage.getItem('usuario'));
-document.getElementById('usuario-nombre').textContent = `Nombre de usuario: ${usuario.nombre}`;
-document.getElementById('usuario-email').textContent = `E-mail: ${usuario.email}`;
-document.getElementById('avatar-img').src = usuario.avatar;
-
 function mostrarCamposMetodoPago() {
   const metodo = document.querySelector('input[name="metodo"]:checked');
-  if (metodo) {
-    document.getElementById('grupo-tarjeta').style.display = metodo.value === 'tarjeta' ? 'block' : 'none';
-    document.getElementById('grupo-cupon').style.display = metodo.value === 'cupon' ? 'block' : 'none';
-  }
+  document.getElementById('grupo-tarjeta').style.display = (metodo && metodo.value === 'tarjeta') ? 'block' : 'none';
+  document.getElementById('grupo-cupon').style.display = (metodo && metodo.value === 'cupon') ? 'block' : 'none';
 }
 
 function validarPassword(pass) {
@@ -38,12 +27,12 @@ function validarPassword(pass) {
 }
 
 function validarTarjeta(numero, clave) {
-  if (!/^[1-9]{3}$/.test(clave)) return false;
+  if (!/^[0-9]{3}$/.test(clave) || clave === "000") return false;
   if (!/^\d{16}$/.test(numero)) return false;
-  if (parseInt(numero[numero.length - 1]) % 2 === 0) return false;
-  const suma = numero.slice(0, -1).split('').reduce((a, b) => a + parseInt(b), 0);
-  if (parseInt(numero[numero.length - 1]) !== suma % 10) return false;
-  return true;
+  const numeros = numero.split('').map(Number);
+  const suma = numeros.slice(0, 15).reduce((a, b) => a + b, 0);
+  const ultimo = numeros[15];
+  return (suma % 2 === 0 && ultimo % 2 === 1) || (suma % 2 === 1 && ultimo % 2 === 0);
 }
 
 function actualizarBotonGuardar() {
@@ -87,11 +76,7 @@ function actualizarBotonGuardar() {
   mensajeError.textContent = valido ? "" : mensaje;
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  mostrarCamposMetodoPago();
-  actualizarBotonGuardar();
-});
-
+// Listeners para validación en tiempo real
 document.getElementById('pass-nueva').addEventListener('input', actualizarBotonGuardar);
 document.getElementById('pass-repetir').addEventListener('input', actualizarBotonGuardar);
 document.querySelectorAll('input[name="metodo"]').forEach(radio => {
@@ -104,6 +89,8 @@ document.getElementById('numero-tarjeta').addEventListener('input', actualizarBo
 document.getElementById('clave-tarjeta').addEventListener('input', actualizarBotonGuardar);
 document.getElementById('codigo-cupon').addEventListener('input', actualizarBotonGuardar);
 
+// MODAL DE CONFIRMACIÓN DE CONTRASEÑA
+
 document.getElementById('perfil-form').addEventListener('submit', function(e) {
   e.preventDefault();
   actualizarBotonGuardar();
@@ -111,7 +98,28 @@ document.getElementById('perfil-form').addEventListener('submit', function(e) {
     document.getElementById('mensaje-error').textContent = "Corrige los errores antes de guardar.";
     return;
   }
-  usuario = JSON.parse(localStorage.getItem('usuario'));
+  document.getElementById('modal-confirmacion').style.display = 'flex';
+  document.getElementById('input-pass-confirm').value = '';
+  document.getElementById('modal-error').textContent = '';
+});
+
+document.getElementById('btn-modal-cancelar').addEventListener('click', function() {
+  document.getElementById('modal-confirmacion').style.display = 'none';
+});
+
+document.getElementById('btn-modal-confirmar').addEventListener('click', function() {
+  const passConfirm = document.getElementById('input-pass-confirm').value;
+  const usuarioActivo = localStorage.getItem('usuarioActivo');
+  let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  let usuario = usuarios.find(u => u.usuario === usuarioActivo);
+
+  if (!usuario || usuario.password !== passConfirm) {
+    document.getElementById('modal-confirmacion').style.display = 'none';
+    document.getElementById('mensaje-error').textContent = "Contraseña incorrecta. No se guardaron los cambios.";
+    return;
+  }
+
+  // Si la contraseña es correcta, guardar cambios
   usuario.password = document.getElementById('pass-nueva').value;
   const metodo = document.querySelector('input[name="metodo"]:checked').value;
   usuario.metodoPago = metodo;
@@ -127,14 +135,14 @@ document.getElementById('perfil-form').addEventListener('submit', function(e) {
   } else {
     usuario.datosPago = {};
   }
-  localStorage.setItem('usuario', JSON.stringify(usuario));
+  localStorage.setItem('usuarios', JSON.stringify(usuarios));
   document.getElementById('mensaje-error').textContent = "";
+  document.getElementById('modal-confirmacion').style.display = 'none';
   alert('¡Cambios guardados!');
   window.location.href = 'vista_principal.html';
 });
 
+// Cancelar: vuelve al login (no borra el usuario)
 document.getElementById('btn-cancelar').addEventListener('click', function() {
-  localStorage.removeItem('usuario');
-  
   window.location.href = 'index.html';
 });

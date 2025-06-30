@@ -34,9 +34,10 @@
     <img id="avatar-img"
       src="assets/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-humano_157943-15752.avif"
       alt="Avatar de usuario">
-    <p id="usuario-nombre"></p>
-    <p id="usuario-email"></p>
   </div>
+    <div id="info-usuario" style="text-align:center; margin-bottom: 20px;">
+</div>
+
 
   <div class="perfil-formulario">
     <div class="formulario-izq">
@@ -70,7 +71,6 @@
     <button type="button" id="btn-cancelar" class="btn btn-rojo">Cancelar subscripción</button>
   </div>
 </form>
-  
   <hr>
 
     <footer>
@@ -107,7 +107,18 @@
 
         </div>
     </footer>
-    <script src="JS/perfil.js"></script>
+<div id="modal-confirmacion">
+  <div class="modal-contenido">
+    <h3 style="margin-bottom:15px;">Confirma tu contraseña</h3>
+    <input type="password" id="input-pass-confirm" placeholder="Contraseña actual">
+    <div style="margin-top:10px;">
+      <button id="btn-modal-confirmar">Confirmar</button>
+      <button id="btn-modal-cancelar">Cancelar</button>
+    </div>
+    <div id="modal-error"></div>
+  </div>
+</div>
+<script src="JS/perfil.js"></script>
 </body>
 
 </html>

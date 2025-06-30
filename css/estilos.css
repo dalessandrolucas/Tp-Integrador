@@ -272,9 +272,69 @@ hr {
   margin-right: 15%;
 }
 
+
+
+
 /*INICIO CARTELERA */
 
+/*MODAL*/
+/* Modal de confirmación de contraseña */
+#modal-confirmacion {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
 
+#modal-confirmacion .modal-contenido {
+  background: #000;
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  min-width: 300px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #fff; /* Borde blanco */
+}
+
+#modal-confirmacion input[type="password"] {
+  margin: 10px 0;
+  padding: 7px;
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+#modal-confirmacion button {
+  padding: 7px 16px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#btn-modal-confirmar {
+  background: #4caf50;
+  margin-right: 10px;
+}
+
+#btn-modal-cancelar {
+  background: #f44336;
+}
+
+#modal-error {
+  color: #ff4444;
+  margin-top: 10px;
+}
+/*FIN MODAL*/
 /* INICIO VISTA DETALLADA */
 
 .body-peliculas {
@@ -1022,3 +1082,8 @@ h3 {
 }
 
 /* FIN LOGIN RESPONSIVE  */
+
+#btn-login:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
