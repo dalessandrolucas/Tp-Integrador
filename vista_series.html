@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title>Pelix - Ver Serie</title>
+    <link rel="stylesheet" href="css/vistaSeries.css">
+    <title>Pelix - Ver Pelicula</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,116 +30,9 @@
             </nav>
         </div>
     </header>
-    <div class="container-pelicula">
-        <div class="video">
-            <iframe class="video-trailer" width="500" height="280" src="https://www.youtube.com/embed/ykLTd5aTa88?si=U77IRBk706BUOug4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      
-        </div>
-        <div class="descripcion">
-            <div class="descripcion-texto">
-                <label for="titulo">Título: El Eternauta</label>
-            </div>
-            <div class="descripcion-texto">
-                <label for="Temporada">Temporadas: </label>
-                <select name="Temporadas" id="Temporadas">
-                    <option>Seleccionar</option>
-                    <option value="1">Temporada 1</option>
-                </select>
-                <label for="Capitulo">Capitulo: </label>
-                <select name="Capitulo" id="Capitulo">
-                    <option>Capitulo</option>
-                    <option value="1">Capitulo 1</option>
-                    <option value="2">Capitulo 2</option>
-                    <option value="3">Capitulo 3</option>
-                    <option value="4">Capitulo 4</option>
-                    <option value="5">Capitulo 5</option>
-                    <option value="6">Capitulo 6</option>
-                </select>
-            </div>
-            <div class="descripcion-texto">
-                <label for="Genero">Genero: Ciencia Ficción</label>
-            </div> 
-            <div class="discripcion-texto">
-                <label for="Actores">Actores:</label>
-                <label for="Nombres">
-                    <a href="https://es.wikipedia.org/wiki/Ricardo_Dar%C3%ADn" target="_blank" class="enlace-actor">Ricardo Darín</a>
-                    <a href="https://es.wikipedia.org/wiki/Carla_Peterson" target="_blank" class="enlace-actor">Carla Peterson</a>
-                    <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Troncoso" target="_blank" class="enlace-actor">Cesar Troncoso</a>
-                    <a href="https://es.wikipedia.org/wiki/Andrea_Pietra" target="_blank" class="enlace-actor">Andrea Pietra</a>
-                    <a href="https://es.wikipedia.org/wiki/Ariel_Staltari" target="_blank"  class="enlace-actor">Ariel Sltaltari</a>
-                    <a href="https://es.wikipedia.org/wiki/Marcelo_Subiotto"target="_blank"  class="enlace-actor">Marcelo Subiotto</a>
-                </label>
-            </div><br>
-            <div class="descripcion-texto">
-                <label for="Resumen">La serie El Eternauta, basada en la célebre historieta de Oesterheld y Solano López, narra la historia de Juan Salvo y su familia, quienes sobreviven a una nevada masiva en Buenos Aires que aniquila a gran parte de la población. Descubren que la nieve es solo el primer paso de una invasión extraterrestre y deben luchar por sobrevivir y resistir a los invasores</label>
-            </div>      
-            <div class="descripcion-texto">
-                <a href="https://youtu.be/ykLTd5aTa88?si=TA7FRi4NTxdcJ6q7" target="_blank" class="btn boton-comenzar">Comenzar</a>
-            </div>
-        </div>
-    </div>
-    <main class="peliculas-similares">
-        <h2>Series Similares</h2>
-        <br>
-        <div class="container-cards">
-
-            <div class="card">
-
-                <a href="VistasSeries/vista_series_DrHouse.html">
-                    <img src="assets/DrHouse.png" alt="Dr.House" class="card-img" width="320" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Dr.House</h5>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="VistasSeries/vista_series_BCS.html">
-                    <img src="assets/BetterCallSaul.png" alt="better-call-saul" class="card-img" width="320" height="200">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Better Call Saul</h5>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="VistasSeries/vista_series_BB.html">
-                    <img src="assets/Breaking-bad.webp" alt="Breaking-bad" class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Breaking bad</h5>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="VistasSeries/vista_series_Dexter.html">
-                    <img src="assets/Dexter-portada.webp" alt="Dexter" class="card-img">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Dexter</h5>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="VistasSeries/vista_series_TVD.html">
-                    <img src="assets/vampire.Diaries.webp" alt="vampire-Diaries" class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title"> The vampire Diaries</h5>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="VistasSeries/vista_series_TR.html">
-                    <img src="assets/resident.jpg" alt="the resident" class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">The Resident</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-
+    <main class="Series">
+        <h2>Series</h2>
+        <div class="contenedor-series"></div>
     </main>
 
     <hr>
@@ -177,6 +71,9 @@
 
         </div>
     </footer>
+
+    <script src="js_data/series_data.js"></script>
+    <script src="JS/vistaSeries.js"></script>
 
 </body>
 
